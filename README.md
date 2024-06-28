@@ -33,5 +33,11 @@ Epoch 7/10, Loss: 0.1124, Accuracy: 96.55%
 Epoch 8/10, Loss: 0.0996, Accuracy: 97.06%
 Epoch 9/10, Loss: 0.0929, Accuracy: 97.23%
 Epoch 10/10, Loss: 0.0898, Accuracy: 97.33%
+![image](https://github.com/godsonj64/AMaC-Optimizer/assets/108623780/7ac74857-7866-44bd-9f34-c89cac9543bc)
+![image](https://github.com/godsonj64/AMaC-Optimizer/assets/108623780/e4e85cb6-132d-44b3-ac8b-85046fc7bce6)
+![image](https://github.com/godsonj64/AMaC-Optimizer/assets/108623780/7b22be08-1136-4b6b-afa1-2a577c089450)
+![image](https://github.com/godsonj64/AMaC-Optimizer/assets/108623780/eef32efd-c4a0-46ab-a39b-14c89c32d190)
+![image](https://github.com/godsonj64/AMaC-Optimizer/assets/108623780/92c3e542-2408-491f-8198-9ff1125d7f5e)
+
 ```sh
 git clone https://github.com/godsonj64/AMaC-Optimizer.git
