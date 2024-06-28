@@ -7,15 +7,34 @@ import numpy as np
 
 # Define the AMaC Optimizer class
 class AMaC(optim.Optimizer):
+    """
+        Initialize the AMaC optimizer with the given parameters.
+        
+        Args:
+            params (iterable): Iterable of parameters to optimize or dicts defining parameter groups.
+            total_steps (int): Total number of training steps.
+            lr (float, optional): Learning rate. Default: 0.001.
+            beta1 (float, optional): Coefficient used for computing running averages of gradient. Default: 0.9.
+            beta2 (float, optional): Coefficient used for computing running averages of squared gradient. Default: 0.999.
+            mu (float, optional): Momentum factor. Default: 0.9.
+            eps (float, optional): Term added to the denominator to improve numerical stability. Default: 1e-8.
+            wd (float, optional): Weight decay (L2 penalty). Default: 0.01.
+            alpha (float, optional): Coefficient used for Lookahead mechanism. Default: 0.5.
+            k (int, optional): Number of steps before updating slow weights in Lookahead mechanism. Default: 5.
+            clip_value (float, optional): Value for gradient clipping. Default: 1.0.
+            warmup_steps (int, optional): Number of steps for learning rate warm-up. Default: 1000.
+            swa_start (int, optional): Step to start Stochastic Weight Averaging (SWA). Default: 10.
+            noise_factor (float, optional): Factor for adaptive noise injection. Default: 0.01.
+        """
     def __init__(self, params, total_steps, lr=0.001, beta1=0.9, beta2=0.999, mu=0.9, eps=1e-8, wd=0.01, alpha=0.5, k=5,
                  clip_value=1.0, warmup_steps=1000, swa_start=10, noise_factor=0.01):
         self.total_steps = total_steps  # Store total_steps as an instance variable
         defaults = dict(lr=lr, beta1=beta1, beta2=beta2, mu=mu, eps=eps, wd=wd, alpha=alpha, k=k, clip_value=clip_value,
-                        warmup_steps=warmup_steps, swa_start=swa_start, noise_factor=noise_factor)
-        super(AMaC, self).__init__(params, defaults)
-        self.swa_weights = []
-        self.swa_start = swa_start
-        self.swa_n = 0
+                        warmup_steps=warmup_steps, swa_start=swa_start, noise_factor=noise_factor)  # Define the default parameter settings for the optimizer
+        super(AMaC, self).__init__(params, defaults)   # Initialize the optimizer with the given parameters and defaults
+        self.swa_weights = []# List to store SWA (Stochastic Weight Averaging) weights
+        self.swa_start = swa_start# Step at which to start SWA
+        self.swa_n = 0 # Counter for the number of SWA updates
 
     def step(self, closure=None):
         loss = None
