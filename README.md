@@ -1,9 +1,9 @@
 # AMaC-Optimizer
-AMaC integrates multiple advanced optimization techniques into a single algorithm to enhance neural network training. By combining adaptive momentum estimation, cosine annealing, SWA, and other methods, AMaC achieves faster convergence, better stability, and improved generalization
-
-# AMaC Optimizer
-
 The AMaC (Adaptive Momentum and Cosine Annealing) Optimizer is a custom PyTorch optimizer that combines several advanced optimization techniques to improve training stability and performance.
+
+# AMaC Optimizer-Vision
+
+AMaC integrates multiple advanced optimization techniques into a single algorithm to enhance neural network training. By combining adaptive momentum estimation, cosine annealing, SWA, and other methods, AMaC achieves faster convergence, better stability, and improved generalization
 
 ## Features
 
