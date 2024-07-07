@@ -17,6 +17,27 @@ AMaC integrates multiple advanced optimization techniques into a single algorith
 - **Lookahead Mechanism**: Periodically updating slow weights with the current weights.
 - **Stochastic Weight Averaging (SWA)**: Averaging model weights over time for smoother training trajectory.
 
+Feature	            Adam Optimizer	                                                          AMaC Optimizer
+Learning Rate	:Fixed or dynamically adjusted	                                  Dynamically adjusted with warmup and cosine annealing
+First Moment Estimate	:Yes (moving average of gradients)	                      Yes (moving average of gradients)
+Second Moment Estimate :	Yes (moving average of squared gradients)	            Yes (moving average of squared gradients)
+Bias Correction	Yes	                                                            Yes
+Weight Decay	Fixed	                                                            Dynamic
+Gradient Clipping	No	                                                          Yes
+Noise Injection	No	                                                            Yes (adaptive noise injection)
+Momentum	Optional (e.g., AdamW)	                                              Yes (with Lookahead mechanism)
+Lookahead Mechanism	No	                                                        Yes
+Stochastic Weight Averaging (SWA)	No	                                          Yes
+Learning Rate Warmup	Optional	                                                Yes
+Gradient Centralization	No	                                                    Yes
+Optimizer Type	Adaptive	                                                      Adaptive
+
+Parameter Update Rule	- Updates parameters based on the average                                                                                  of past gradients (momentum) and current gradient direction.	                                                                                                                                                          Updates parameters based on a combination of momentum,                                                                                      adaptive learning rates, noise injection, and Lookahead                                                                                     mechanism.
+Implementation Complexity	Moderate	                                            High
+Use Case	General-purpose optimization	                                        Enhanced stability and convergence, particularly in noisy                                                                                   or complex optimization landscapes.
+
+
+
 ## Usage
 
 ### Installation
