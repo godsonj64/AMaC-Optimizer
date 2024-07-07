@@ -64,16 +64,19 @@ Adaptive Weight Decay: The weight decay in AMaC is dynamically adjusted, which c
 Use Cases
 The AMaC optimizer is particularly beneficial in scenarios involving:
 
+
+
+## Usage
+
 Deep Neural Networks: Where training stability and convergence speed are critical.
 Noisy Data or Gradients: Where robustness to noise can lead to better performance.
 Complex Optimization Landscapes: Where traditional optimizers might struggle to escape local minima or saddle points.
 Training with Limited Data: Where generalization to unseen data is crucial, and techniques like SWA can be highly beneficial.
 
-## Usage
-
 ### Installation
 
 Clone this repository and include the `AMaC_optimizer.py` in your project.
+
 #### Sample Train Results Using MNIST 
 Epoch 1/10, Loss: 1.1543, Accuracy: 69.09%
 Epoch 2/10, Loss: 0.4018, Accuracy: 87.40%
